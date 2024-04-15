@@ -24,6 +24,5 @@ ENV DEBUG=False
 WORKDIR /app
 
 EXPOSE 8000
-RUN python manage.py migrate
 RUN python manage.py collectstatic 
 CMD gunicorn --bind 0.0.0.0:8000 --worker-tmp-dir /dev/shm mysite.wsgi
